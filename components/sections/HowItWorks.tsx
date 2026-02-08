@@ -23,7 +23,7 @@ export function HowItWorks() {
     ]
 
     return (
-        <section className="py-24 bg-[#FBFAF1]">
+        <section className="py-24 bg-[#EFEBE1]">
             <div className="container space-y-16">
                 <div className="text-center space-y-2">
                     <h2 className="text-2xl font-bold text-gray-900">The 3-Step Protocol</h2>
@@ -32,13 +32,13 @@ export function HowItWorks() {
 
                 <div className="grid md:grid-cols-3 gap-8 relative">
                     {/* Connector Line */}
-                    <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+                    <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/60 to-transparent" />
 
                     {steps.map((step, i) => (
                         <div key={i} className="relative flex flex-col items-center text-center space-y-4">
-                            <div className="bg-white p-2 rounded-xl relative z-10 border border-black/5 shadow-sm">
-                                <div className="bg-gray-50 w-20 h-20 rounded-lg flex items-center justify-center border border-black/5">
-                                    <span className="text-gray-900 font-bold">{step.number}</span>
+                            <div className="bg-black p-2 rounded-xl relative z-10 border border-black/5 shadow-sm">
+                                <div className="bg-black w-20 h-20 rounded-lg flex items-center justify-center border border-black/5">
+                                    <span className="text-white font-bold text-xl">{step.number}</span>
                                 </div>
                             </div>
                             <h3 className="text-lg font-bold text-gray-900">{step.title}</h3>

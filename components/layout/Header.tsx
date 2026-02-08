@@ -1,8 +1,23 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Globe, User } from "lucide-react"
+import {useState, useEffect} from "react";
+import {cn} from "@/lib/utils";
+
+const navLinks = [
+	{href: "#vin-decoder", name: "VIN Decoder"},
+	{href: "#sample-report", name: "Sample Report"},
+	{href: "#pricing", name: "Pricing"},
+	{href: "#how-it-works", name: "How It Works"},
+	{href: "#import-guides", name: "Import Guides"},
+	{href: "#about", name: "About"}
+]
 
 export function Header() {
+	const [activeLink, setActiveLink] = useState("");
+	// need a intersection observer to track active link
     return (
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-md">
             <div className="container flex h-16 items-center justify-between">
@@ -14,11 +29,14 @@ export function Header() {
                 </div>
 
                 <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-                    <Link href="#" className="hover:text-primary transition-colors">Sample Report</Link>
-                    <Link href="#" className="hover:text-primary transition-colors">Pricing</Link>
-                    <Link href="#" className="hover:text-primary transition-colors">Real Stories</Link>
-                    <Link href="#" className="hover:text-primary transition-colors">Contact Us</Link>
-                    <Link href="#" className="hover:text-primary transition-colors">Blog</Link>
+								{navLinks.map((link)=>(
+									<Link key={link.href} href={link.href} className={cn("relative py-1 transition-colors", activeLink === link.href ? "text-white": "hover:text-primary")}>
+									{link.name}
+									{activeLink === link.href && (
+										<span className="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-primary/50" />
+									)}
+									</Link>
+								))}
                 </nav>
 
                 <div className="flex items-center gap-4">
