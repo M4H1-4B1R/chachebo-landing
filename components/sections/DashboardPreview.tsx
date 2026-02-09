@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Eye } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function DashboardPreview() {
   const features = [
@@ -25,12 +26,12 @@ export function DashboardPreview() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A]">
-                See what's under the hood.{" "}
+                See what&apos;s under the hood.{" "}
                 <span className="text-[#FF7A00]">Literally.</span>
               </h2>
               <p className="text-[#4A4A4A]">
-                Don't rely on guesswork. Our multi-layered reports expose every
-                detail hidden in the Chinese automotive ecosystem.
+                Don&apos;t rely on guesswork. Our multi-layered reports expose
+                every detail hidden in the Chinese automotive ecosystem.
               </p>
 
               <div className="space-y-4">
@@ -49,10 +50,12 @@ export function DashboardPreview() {
                 ))}
               </div>
 
-              <Button size="lg" className="rounded-full gap-2">
-                <Eye className="h-5 w-5" />
-                View Full Sample PDF
-              </Button>
+              <Link href="/sample-report">
+                <Button size="lg" className="rounded-full gap-2">
+                  <Eye className="h-5 w-5" />
+                  View Full Sample Report
+                </Button>
+              </Link>
             </div>
 
             <div className="relative">
