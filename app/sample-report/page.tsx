@@ -768,7 +768,7 @@ export default function SampleReportPage() {
               </div>
 
               {/* Maintenance history section */}
-              <div id="accident-records" className="bg-white scroll-mt-28">
+              <div id="maintenance-history" className="bg-white scroll-mt-28">
                 <div className="bg-[#FF7A00] text-white px-8 py-4">
                   <h2 className="font-bold text-xl">Maintenance History</h2>
                 </div>
