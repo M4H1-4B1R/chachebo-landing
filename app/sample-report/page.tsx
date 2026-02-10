@@ -572,6 +572,395 @@ export default function SampleReportPage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Mileage Records Section */}
+                <div id="mileage-records" className="bg-gray-50 scroll-mt-28">
+                  <div className="bg-[#FF7A00] text-white px-8 py-4">
+                    <h2 className="font-bold text-xl">Mileage Records</h2>
+                  </div>
+                  <div className="p-8">
+                    <div className="grid md:grid-cols-2 gap-8 items-start">
+                      {/* Mileage Table */}
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b border-gray-200">
+                            <th className="text-left py-3 pr-4 font-semibold text-gray-900">
+                              Record Date
+                            </th>
+                            <th className="text-left py-3 pr-4 font-semibold text-gray-900">
+                              Mileage (km)
+                            </th>
+                            <th className="text-left py-3 pr-4 font-semibold text-gray-900">
+                              Source
+                            </th>
+                            <th className="text-left py-3 font-semibold text-gray-900">
+                              Status
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            {
+                              date: "Jan 2023",
+                              km: "50",
+                              source: "Registration",
+                            },
+                            {
+                              date: "Mar 2023",
+                              km: "3,280",
+                              source: "Service Record",
+                            },
+                            {
+                              date: "Jun 2023",
+                              km: "8,150",
+                              source: "Service Record",
+                            },
+                            {
+                              date: "Sep 2023",
+                              km: "12,920",
+                              source: "Inspection",
+                            },
+                            {
+                              date: "Dec 2023",
+                              km: "17,540",
+                              source: "Service Record",
+                            },
+                            {
+                              date: "Jan 2024",
+                              km: "18,650",
+                              source: "Current Reading",
+                            },
+                          ].map((row, i) => (
+                            <tr
+                              key={i}
+                              className={
+                                i < 5 ? "border-b border-gray-100" : ""
+                              }
+                            >
+                              <td className="py-3 pr-4 text-gray-500">
+                                {row.date}
+                              </td>
+                              <td className="py-3 pr-4 font-bold text-[#1A1A1A]">
+                                {row.km}
+                              </td>
+                              <td className="py-3 pr-4 text-gray-500">
+                                {row.source}
+                              </td>
+                              <td className="py-3">
+                                <CheckCircle2 className="h-5 w-5 text-green-500" />
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+
+                      {/* Mileage Chart (SVG) */}
+                      <div className="flex items-center justify-center">
+                        <svg
+                          viewBox="0 0 300 200"
+                          className="w-full h-auto"
+                          aria-label="Mileage trend chart showing consistent increase from 50 km to 18,650 km"
+                        >
+                          {/* Grid lines */}
+                          <line
+                            x1="40"
+                            y1="170"
+                            x2="280"
+                            y2="170"
+                            stroke="#e5e7eb"
+                            strokeWidth="1"
+                          />
+                          <line
+                            x1="40"
+                            y1="128"
+                            x2="280"
+                            y2="128"
+                            stroke="#f3f4f6"
+                            strokeWidth="0.5"
+                          />
+                          <line
+                            x1="40"
+                            y1="86"
+                            x2="280"
+                            y2="86"
+                            stroke="#f3f4f6"
+                            strokeWidth="0.5"
+                          />
+                          <line
+                            x1="40"
+                            y1="44"
+                            x2="280"
+                            y2="44"
+                            stroke="#f3f4f6"
+                            strokeWidth="0.5"
+                          />
+
+                          {/* Y-axis labels */}
+                          <text
+                            x="35"
+                            y="174"
+                            textAnchor="end"
+                            className="text-[9px] fill-gray-400"
+                          >
+                            0
+                          </text>
+                          <text
+                            x="35"
+                            y="132"
+                            textAnchor="end"
+                            className="text-[9px] fill-gray-400"
+                          >
+                            6k
+                          </text>
+                          <text
+                            x="35"
+                            y="90"
+                            textAnchor="end"
+                            className="text-[9px] fill-gray-400"
+                          >
+                            12k
+                          </text>
+                          <text
+                            x="35"
+                            y="48"
+                            textAnchor="end"
+                            className="text-[9px] fill-gray-400"
+                          >
+                            18k
+                          </text>
+
+                          {/* Line path - data points:
+                            Jan 2023: 50 -> (48, 169.6)
+                            Mar 2023: 3280 -> (96, 146.7)
+                            Jun 2023: 8150 -> (144, 112.4)
+                            Sep 2023: 12920 -> (192, 78.7)
+                            Dec 2023: 17540 -> (240, 46.1)
+                            Jan 2024: 18650 -> (272, 38.3)
+                          */}
+                          <polyline
+                            points="48,169.6 96,146.7 144,112.4 192,78.7 240,46.1 272,38.3"
+                            fill="none"
+                            stroke="#1A1A1A"
+                            strokeWidth="2"
+                            strokeLinejoin="round"
+                          />
+
+                          {/* Data points */}
+                          <circle cx="48" cy="169.6" r="4" fill="#FF7A00" />
+                          <circle cx="96" cy="146.7" r="4" fill="#FF7A00" />
+                          <circle cx="144" cy="112.4" r="4" fill="#FF7A00" />
+                          <circle cx="192" cy="78.7" r="4" fill="#FF7A00" />
+                          <circle cx="240" cy="46.1" r="4" fill="#FF7A00" />
+                          <circle cx="272" cy="38.3" r="4" fill="#FF7A00" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Verification Badge */}
+                    <div className="mt-6 bg-green-50 rounded-xl px-6 py-4 border border-green-100 flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
+                      <p className="text-sm font-semibold text-green-700">
+                        Mileage Verified – No Anomalies Detected
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Maintenance history section */}
+              <div id="accident-records" className="bg-white scroll-mt-28">
+                <div className="bg-[#FF7A00] text-white px-8 py-4">
+                  <h2 className="font-bold text-xl">Maintenance History</h2>
+                </div>
+                <div className="p-8 space-y-6">
+                  {/* wrapper box */}
+                  <div className="relative pl-6">
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Date
+                          </p>
+                          <p className="text-lg font-bold text-[#1A1A1A]">
+                            December 18, 2023
+                          </p>
+                        </div>
+                        <span className="text-xs font-semibold text-[#1a1a1a]  bg-gray-200 rounded-full px-3 py-1">
+                          Regular Service
+                        </span>
+                      </div>
+
+                      {/* Details */}
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Type
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            10,000 KM Maintenance
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Provider
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            BYD Authorized Center - Shenzen
+                          </p>
+                        </div>
+                      </div>
+
+                      <hr className="border-gray-200 mb-4" />
+
+                      <p className="text-sm text-gray-400">
+                        Batter health check, brake inspection, tire rotation,
+                        software update, coolant level check.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* wrapper box */}
+                  <div className="relative pl-6">
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Date
+                          </p>
+                          <p className="text-lg font-bold text-[#1A1A1A]">
+                            September 5, 2023
+                          </p>
+                        </div>
+                        <span className="text-xs font-semibold text-[#1a1a1a]  bg-gray-200 rounded-full px-3 py-1">
+                          Annual Inspection
+                        </span>
+                      </div>
+
+                      {/* Details */}
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Type
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            Safety Inspection
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Provider
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            Guangdong Vehicle Inspection Station
+                          </p>
+                        </div>
+                      </div>
+
+                      <hr className="border-gray-200 mb-4" />
+
+                      <p className="text-sm text-gray-400">
+                        Annual safety inspection passed. All systems
+                        operational. Emissions compliant (EV).
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* wrapper box */}
+                  <div className="relative pl-6">
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Date
+                          </p>
+                          <p className="text-lg font-bold text-[#1A1A1A]">
+                            June 22, 2023
+                          </p>
+                        </div>
+                        <span className="text-xs font-semibold text-[#1a1a1a]  bg-gray-200 rounded-full px-3 py-1">
+                          Regular Service
+                        </span>
+                      </div>
+
+                      {/* Details */}
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Type
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            5000 km Maintenance
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Provider
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            BYD Authorized Center - Shenzen
+                          </p>
+                        </div>
+                      </div>
+
+                      <hr className="border-gray-200 mb-4" />
+
+                      <p className="text-sm text-gray-400">
+                        Battery system check. HVAC service, break fluid
+                        inspection, tire pressure adjustment.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* wrapper box */}
+                  <div className="relative pl-6">
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Date
+                          </p>
+                          <p className="text-lg font-bold text-[#1A1A1A]">
+                            March 20, 2023
+                          </p>
+                        </div>
+                        <span className="text-xs font-semibold text-[#FF7A00] border border-orange-300 bg-orange-50 rounded-full px-3 py-1">
+                          Repair
+                        </span>
+                      </div>
+
+                      {/* Details */}
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Type
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            Accident Repair
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Service Provider
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            BYD Authorized Body Shop
+                          </p>
+                        </div>
+                      </div>
+
+                      <hr className="border-gray-200 mb-4" />
+
+                      <p className="text-sm text-gray-400">
+                        Battery system check. HVAC service, break fluid
+                        inspection, tire pressure adjustment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* CTA Footer Section */}

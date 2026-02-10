@@ -9,6 +9,7 @@ const navItems = [
   { label: "Vehicle Identity", id: "vehicle-identity" },
   { label: "Body & Structural", id: "body-structural" },
   { label: "Accident Records", id: "accident-records" },
+  { label: "Mileage Records", id: "mileage-records" },
 ];
 
 export function ReportNavigation() {
