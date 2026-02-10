@@ -12,6 +12,7 @@ const navItems = [
   { label: "Mileage Records", id: "mileage-records" },
   { label: "Maintenance History", id: "maintenance-history" },
   { label: "Insurance Claims", id: "insurance-claims" },
+  { label: "Auction Records", id: "auction-records" },
 ];
 
 export function ReportNavigation() {

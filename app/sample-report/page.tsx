@@ -2,7 +2,13 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ReportNavigation } from "@/components/sample-report/ReportNavigation";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, FileCheck, CircleAlert } from "lucide-react";
+import {
+  CheckCircle2,
+  Shield,
+  FileCheck,
+  CircleAlert,
+  CircleCheck,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function SampleReportPage() {
@@ -1039,6 +1045,24 @@ export default function SampleReportPage() {
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Auction records section */}
+              <div id="auction-records" className="bg-white scroll-mt-28">
+                <div className="bg-[#FF7A00] text-white px-8 py-4">
+                  <h2 className="font-bold text-xl">Auction Records</h2>
+                </div>
+                <div className="flex p-20 flex-col items-center justify-center">
+                  <CircleCheck className="w-20 h-20 text-green-400 mb-4 bg-green-200/40 rounded-full p-3 animate-pulse" />
+                  <h2 className="text-[#1a1a1a] font-bold text-center capitalize text-lg text-nowrap">
+                    no auction records found
+                  </h2>
+                  <p className="text-[#1a1a1a] text-sm text-center mt-2">
+                    This vehicle has never been listed in salvage
+                    <br /> auctions or disposal programs. It remains in private
+                    <br /> ownership with clean title
+                  </p>
                 </div>
               </div>
 
