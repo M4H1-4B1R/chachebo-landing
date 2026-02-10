@@ -24,13 +24,13 @@ export default function SampleReportPage() {
             <ReportNavigation />
 
             {/* Report Content */}
-            <div className="flex-1 max-w-4xl">
+            <div className="flex-1 max-w-4xl space-y-6">
               {/* Sample Report Card */}
-              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div className="space-y-6">
                 {/* Header Section */}
                 <div
                   id="report-summary"
-                  className="p-8 border-b border-gray-200 scroll-mt-28"
+                  className="bg-white rounded-2xl shadow-2xl p-8 scroll-mt-28"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-200">
                     {/* Vehicle Information */}
@@ -132,7 +132,10 @@ export default function SampleReportPage() {
                 </div>
 
                 {/* Vehicle Overview Section */}
-                <div id="vehicle-overview" className="bg-white scroll-mt-28">
+                <div
+                  id="vehicle-overview"
+                  className="bg-white rounded-2xl overflow-hidden scroll-mt-28"
+                >
                   <div className="bg-[#FF7A00] text-white px-8 py-3">
                     <h2 className="font-bold text-lg">VEHICLE OVERVIEW</h2>
                   </div>
@@ -173,7 +176,7 @@ export default function SampleReportPage() {
                 {/* Overall Evaluation Section */}
                 <div
                   id="overall-evaluation"
-                  className="bg-gray-50 scroll-mt-28"
+                  className="bg-gray-50 rounded-2xl overflow-hidden scroll-mt-28"
                 >
                   <div className="bg-[#FF7A00] text-white px-8 py-4">
                     <h2 className="font-bold text-xl">Overall Evaluation</h2>
@@ -254,7 +257,10 @@ export default function SampleReportPage() {
                 </div>
 
                 {/* Vehicle Identity Section */}
-                <div id="vehicle-identity" className="bg-white scroll-mt-28">
+                <div
+                  id="vehicle-identity"
+                  className="bg-white rounded-2xl overflow-hidden scroll-mt-28"
+                >
                   <div className="bg-[#FF7A00] text-white px-8 py-4">
                     <h2 className="font-bold text-xl">Vehicle Identity</h2>
                   </div>
@@ -345,7 +351,10 @@ export default function SampleReportPage() {
                 </div>
 
                 {/* Body & Structural Check Section */}
-                <div id="body-structural" className="bg-gray-50 scroll-mt-28">
+                <div
+                  id="body-structural"
+                  className="bg-gray-50 rounded-2xl overflow-hidden scroll-mt-28"
+                >
                   <div className="bg-[#FF7A00] text-white px-8 py-4">
                     <h2 className="font-bold text-xl">
                       Body & Structural Check
@@ -491,7 +500,10 @@ export default function SampleReportPage() {
                 </div>
 
                 {/* Accident & Damage Records Section */}
-                <div id="accident-records" className="bg-white scroll-mt-28">
+                <div
+                  id="accident-records"
+                  className="bg-white rounded-2xl overflow-hidden scroll-mt-28"
+                >
                   <div className="bg-[#FF7A00] text-white px-8 py-4">
                     <h2 className="font-bold text-xl">
                       Accident & Damage Records
@@ -580,7 +592,10 @@ export default function SampleReportPage() {
                 </div>
 
                 {/* Mileage Records Section */}
-                <div id="mileage-records" className="bg-gray-50 scroll-mt-28">
+                <div
+                  id="mileage-records"
+                  className="bg-gray-50 rounded-2xl overflow-hidden scroll-mt-28"
+                >
                   <div className="bg-[#FF7A00] text-white px-8 py-4">
                     <h2 className="font-bold text-xl">Mileage Records</h2>
                   </div>
@@ -774,7 +789,10 @@ export default function SampleReportPage() {
               </div>
 
               {/* Maintenance history section */}
-              <div id="maintenance-history" className="bg-white scroll-mt-28">
+              <div
+                id="maintenance-history"
+                className="bg-white rounded-2xl overflow-hidden scroll-mt-28"
+              >
                 <div className="bg-[#FF7A00] text-white px-8 py-4">
                   <h2 className="font-bold text-xl">Maintenance History</h2>
                 </div>
@@ -970,7 +988,10 @@ export default function SampleReportPage() {
               </div>
 
               {/* Insurance claims section */}
-              <div id="insurance-claims" className="bg-white scroll-mt-28">
+              <div
+                id="insurance-claims"
+                className="bg-white rounded-2xl overflow-hidden scroll-mt-28"
+              >
                 <div className="bg-[#FF7A00] text-white px-8 py-4">
                   <h2 className="font-bold text-xl">Insurance Claims</h2>
                 </div>
@@ -1049,7 +1070,10 @@ export default function SampleReportPage() {
               </div>
 
               {/* Auction records section */}
-              <div id="auction-records" className="bg-white scroll-mt-28">
+              <div
+                id="auction-records"
+                className="bg-white rounded-2xl overflow-hidden scroll-mt-28"
+              >
                 <div className="bg-[#FF7A00] text-white px-8 py-4">
                   <h2 className="font-bold text-xl">Auction Records</h2>
                 </div>
@@ -1067,7 +1091,7 @@ export default function SampleReportPage() {
               </div>
 
               {/* CTA Footer Section */}
-              <div className="mt-12 bg-[#1A1A1A] rounded-2xl p-8 md:p-12 text-center">
+              <div className="bg-[#1A1A1A] rounded-2xl p-8 md:p-12 text-center">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   Ready to check your vehicle?
                 </h2>
