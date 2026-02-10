@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ReportNavigation } from "@/components/sample-report/ReportNavigation";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, FileCheck } from "lucide-react";
+import { CheckCircle2, Shield, FileCheck, CircleAlert } from "lucide-react";
 import Image from "next/image";
 
 export default function SampleReportPage() {
@@ -957,6 +957,85 @@ export default function SampleReportPage() {
                       <p className="text-sm text-gray-400">
                         Battery system check. HVAC service, break fluid
                         inspection, tire pressure adjustment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Insurance claims section */}
+              <div id="insurance-claims" className="bg-white scroll-mt-28">
+                <div className="bg-[#FF7A00] text-white px-8 py-4">
+                  <h2 className="font-bold text-xl">Insurance Claims</h2>
+                </div>
+                <div className="flex p-8">
+                  {/* wrapper box */}
+                  <div className="relative pl-6 flex-1">
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 h-full">
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <span className="text-xs font-semibold text-[#1a1a1a]  bg-gray-200 rounded-full px-3 py-1">
+                            Property Damage
+                          </span>
+                          <p className="text-xs text-gray-400 mb-0.5 mt-5">
+                            Claim Date
+                          </p>
+                          <p className="text-lg font-bold text-[#1A1A1A]">
+                            March 16, 2023
+                          </p>
+                        </div>
+                        <span className="text-xs font-semibold text-[#FF7A00] border border-orange-300 bg-orange-50 rounded-full px-3 py-1">
+                          Settled
+                        </span>
+                      </div>
+
+                      {/* Details */}
+                      <div className="grid grid-cols-1 gap-4 mb-4">
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Claim Type
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            Vehicle Damage
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Damage Category
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            Rear Bumper Damage
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-400 mb-0.5">
+                            Insurance Provider
+                          </p>
+                          <p className="text-sm font-bold text-[#1A1A1A]">
+                            PICC Property & Casualty
+                          </p>
+                        </div>
+                      </div>
+
+                      <hr className="border-gray-200 mb-4" />
+
+                      <p className="text-sm text-gray-400">
+                        Claim processed and settled within 15 days. Full repair
+                        coverage provided. No deductible applied.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* wrapper box */}
+                  <div className="relative pl-6 flex-1">
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 h-full flex flex-col justify-center items-center">
+                      <CircleAlert className="w-20 h-20 text-green-400 mb-4 bg-green-200/40 rounded-full p-3 animate-pulse" />
+                      <h2 className="text-[#1a1a1a] font-bold text-center capitalize text-lg text-nowrap">
+                        Clean Insurance Record
+                      </h2>
+                      <p className="text-[#1a1a1a] text-center text-md">
+                        Only one minor claim filed since purchase
                       </p>
                     </div>
                   </div>
